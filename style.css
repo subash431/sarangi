@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 65.5%;
+  font-family: "Gill Sans Extrabold", sans-serif;
+}
+/* for the color  */
+:root {
+  --dark-blue: #08192d;
+  --hero-color: #0a183d;
+  --menu-gray: #4c4c4c;
+  --red-btn: #fc0254;
+  --blue-btn: #383b70;
+  --red-text: #fc0254;
+  --soft-blue: #1c294a;
+}
+
+/* style for nav section */
+.navigation__Section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* gap: 40rem; */
+  flex-wrap: wrap;
+  background-color: var(--dark-blue);
+  height: 12rem;
+}
+/* for logo */
+.logo h1 {
+  font-size: 2.2rem;
+  color: white;
+}
+.logo span {
+  font-size: 2.2rem;
+  color: var(--red-text);
+}
+
+.middle__nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9rem;
+}
+.middle__nav ul li {
+  list-style: none;
+}
+.middle__nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.left__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.left__nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
+.left__nav p a span:last-child {
+  font-size: 1.4rem;
+  color: var(--red-text);
+}
+/* ending nav section styling */
+
+/* menu section */
+.menu__section {
+  position: absolute;
+  width: 90%;
+  background-color: var(--menu-gray);
+  padding: 0.5rem;
+  margin-left: 7rem;
+}
+.sub__menu__section {
+  padding: 0.4rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #222222;
+  width: 9%;
+  height: auto;
+  position: relative;
+  top: 0px;
+  left: 1200px;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.sub__menu__section > button {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.sub__menu__section > img {
+  height: 40px;
+  width: auto;
+}
+
+/* Start hero section  */
+.hero__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--hero-color);
+  padding: 8rem;
+  gap: 10rem;
+}
+.hero__section--left h1 {
+  font-size: 7rem;
+  color: white;
+  font-weight: 100;
+}
+.hero__section--left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-direction: column;
+  width: 40%;
+}
+.hero__section--left h1 > span {
+  font-size: 7rem;
+  color: var(--red-text);
+  font-weight: 100;
+}
+.hero__section--left p {
+  font-size: 1.5rem;
+  color: white;
+  line-height: 200%;
+  font-weight: 100;
+}
+.hero__button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+.hero__button > button {
+  font-size: 1.7rem;
+  padding: 2rem;
+  border-radius: 3rem;
+  font-weight: 100;
+  cursor: pointer;
+}
+.hero__button > button:first-child {
+  background-color: var(--red-btn);
+  border: none;
+  color: white;
+}
+.hero__button > button:last-child {
+  background-color: var(--blue-btn);
+  border: none;
+  color: white;
+}
+/* ending of hero section  */
+/* Start of track section */
+.track__section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+  padding: 8rem;
+  padding-left: 12rem;
+}
+
+.left__track {
+  width: 50%;
+}
+.left__track h1 {
+  font-size: 6rem;
+  font-weight: 100;
+}
+.right__track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+}
+.right__track p {
+  /* width: 50%; */
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 180%;
+}
+.right__track > button {
+  background-color: var(--red-btn);
+  border: none;
+  color: white;
+  font-size: 1.7rem;
+  padding: 1.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 3rem;
+  font-weight: 100;
+  cursor: pointer;
+}
+/* end of track section */
+/* start of work section  */
+.work__section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 5rem;
+  background-color: var(--hero-color);
+  padding: 12rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.work__left--section h1 {
+  font-size: 6rem;
+  color: white;
+  font-weight: 100;
+}
+.work__down--section {
+  display: flex;
+
+  gap: 7rem;
+}
+.work__down--items {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+}
+.work__down--items > img {
+  border-radius: 50%;
+  height: 70px;
+  width: auto;
+}
+.work__down--items > h3 {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+}
+.work__down--items > p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 180%;
+  color: #878ea0;
+}
+.work__down--items > button {
+  background-color: var(--red-btn);
+  border: none;
+  color: white;
+  font-size: 1.7rem;
+  padding: 1.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 3rem;
+  font-weight: 100;
+  cursor: pointer;
+}
+.work__down--items > button:hover {
+  background-color: transparent;
+  border: 2px solid var(--red-btn);
+}
+/* end of work section  */
+/* start of concept secton */
+.concept__section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10rem;
+  gap: 4rem;
+}
+.concept__section--top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12rem;
+}
+.concept__section--top--left h1 {
+  font-size: 6rem;
+  font-weight: 100;
+}
+.concept__section--top--right {
+  width: 50%;
+  padding-left: 6rem;
+}
+.concept__section--top--right > p {
+  font-size: 1.6rem;
+  line-height: 190%;
+  font-weight: 100;
+  color: #878ea0;
+}
+.concept__section--down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.concept__section--items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7rem;
+  flex-direction: column;
+}
+.concept__section--items > img {
+  border-radius: 4rem;
+}
+.concept__section--items > h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* end of concept secton */
