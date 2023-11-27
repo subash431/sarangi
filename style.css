@@ -6,6 +6,9 @@
   font-size: 65.5%;
   font-family: "Gill Sans Extrabold", sans-serif;
 }
+p {
+  text-align: justify;
+}
 /* for the color  */
 :root {
   --dark-blue: #08192d;
@@ -113,6 +116,7 @@
   border: none;
   color: white;
 }
+
 .sub__menu__section > img {
   height: 40px;
   width: auto;
@@ -164,10 +168,15 @@
   font-weight: 100;
   cursor: pointer;
 }
+
 .hero__button > button:first-child {
   background-color: var(--red-btn);
   border: none;
   color: white;
+}
+.hero__button > button:first-child:hover {
+  background-color: transparent;
+  border: 1px solid var(--red-text);
 }
 .hero__button > button:last-child {
   background-color: var(--blue-btn);
@@ -413,4 +422,59 @@
 .product__section--items > button:hover {
   background-color: transparent;
   border: 2px solid var(--red-btn);
+}
+.description__section {
+  padding: 3rem;
+  padding-top: 7rem;
+}
+.description__section--flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 7rem;
+}
+.description__section--items {
+  /* border: 1px solid gray; */
+}
+.description__section--items > img {
+  height: 50rem;
+  width: auto;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.description__section--items > img:hover {
+  transform: rotate(-10deg);
+}
+.description__right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 50%;
+  flex-direction: column;
+}
+.description__right > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+}
+.description__right > p {
+  font-size: 1.7rem;
+  line-height: 200%;
+}
+.description__right > button {
+  background-color: var(--red-btn);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-radius: 2rem;
+  font-weight: 100;
+  cursor: pointer;
+}
+.description__right > button:hover {
+  background-color: transparent;
+  color: black;
+  border: 1px solid var(--red-text);
 }
