@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Details</title>
+
+    <style>
+      h1,
+      p {
+        color: white;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 26px;
+      }
+      .product__section--items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 7rem;
+        margin-top: 3rem;
+        border: 2px solid gray;
+        padding: 2rem;
+        background: #08192d;
+      }
+      .product__section--items > img {
+        height: 20rem;
+        cursor: pointer;
+      }
+      .btn {
+        background-color: #fc0254;
+        border: 2px solid transparent;
+        color: white;
+
+        font-size: 0.8rem;
+        padding: 1rem 1rem;
+        border-radius: 2rem;
+        font-weight: 100;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      .btn:hover {
+        background-color: transparent;
+        border: 2px solid #fc0254;
+        color: #fc0254;
+      }
+    </style>
+  </head>
+  <body class="product__section">
+    <div id="details">
+      <!-- Details will be dynamically loaded here using JavaScript -->
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Extract item ID parameter from the URL
+        var params = new URLSearchParams(window.location.search);
+        var itemId = params.get("id");
+
+        // Check if itemId is not null
+        if (itemId !== null) {
+          // Dynamically load details based on the itemId
+          loadDetails(itemId);
+        } else {
+          document.getElementById("details").innerHTML =
+            "<p>No details available</p>";
+        }
+      });
+
+      function loadDetails(itemId) {
+        var detailsContainer = document.getElementById("details");
+
+        // Customize details based on the itemId
+        if (itemId === "1") {
+          detailsContainer.innerHTML = ` <div class="product__section--items">
+          <h1>Product details</h1>
+          <img src="./images/g10.png" alt="" />
+          <h1>White Acustic</h1>
+          <p>Explore a diverse range of music genres to find what resonates with
+          you. From pop sensations like Tame Impala and Lana del Rey to rock
+          legends like Pink Floyd and Radiohead, there's something for everyone.
+          Hip-hop enthusiasts can enjoy Kendrick Lamar and J Cole, while
+          R&B/Soul lovers may appreciate Beyoncé and John Legend. Electronic and
+          dance music enthusiasts can groove to Calvin Harris and Daft Punk.</p>
+          <div class="details__btn">
+            <button class = "btn">Add to Cart</button>
+            <a href="index.html"><button class = "btn">Back to Home</button></a>
+            
+            </div>
+
+        </div> `;
+        } else if (itemId === "2") {
+          detailsContainer.innerHTML = `<div class="product__section--items">
+            <h1>Product details</h1>
+          <img src="./images/g2.png" alt="" />
+          <h1>Paul Timmons</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+            fuga atque labore ducimus voluptates earum illo minus, libero ullam
+            eum ab asperiores vero cum dicta laborum iste temporibus accusantium
+            necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Omnis, ad necessitatibus enim consequatur dignissimos tempora
+            beatae dolore amet reprehenderit vel velit at rem atque fugiat
+            eligendi, quam reiciendis veritatis sed? Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Officiis fuga atque labore ducimus
+            voluptates earum illo minus, libero ullam eum ab asperiores vero cum
+            dicta laborum iste temporibus accusantium necessitatibus. Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Omnis, ad
+            necessitatibus enim consequatur dignissimos tempora beatae dolore
+            amet reprehenderit vel velit at rem atque fugiat eligendi, quam
+            reiciendis veritatis sed?</p>
+            <div class="details__btn">
+            <button class = "btn">Add to Cart</button>
+            <a href="index.html"><button class = "btn">Back to Home</button></a>
+            
+            </div>
+          
+        </div>`;
+        } else if (itemId === "3") {
+          detailsContainer.innerHTML = `<div class="product__section--items">
+            <h1>Product details</h1>
+          <img src="./images/g4.png" alt="" />
+          <h1>White Acustic</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+            fuga atque labore ducimus voluptates earum illo minus, libero ullam
+            eum ab asperiores vero cum dicta laborum iste temporibus accusantium
+            necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Omnis, ad necessitatibus enim consequatur dignissimos tempora
+            beatae dolore amet reprehenderit vel velit at rem atque fugiat</p>
+            <div class="details__btn">
+            <button class = "btn">Add to Cart</button>
+            <a href="index.html"><button class = "btn">Back to Home</button></a>
+            
+            </div>
+          
+        </div>`;
+        } else if (itemId === "4") {
+          detailsContainer.innerHTML = `<div class="product__section--items">
+            <h1>Product details</h1>
+            <img src="./images/g10.png" alt="" />
+          <h1>White Acustic</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+            fuga atque labore ducimus voluptates earum illo minus, libero ullam
+            eum ab asperiores vero cum dicta laborum iste temporibus accusantium
+            necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Omnis, ad necessitatibus enim consequatur dignissimos tempora
+            beatae dolore amet reprehenderit vel velit at rem atque fugiat</p>
+            <div class="details__btn">
+            <button class = "btn">Add to Cart</button>
+            <a href="index.html"><button class = "btn">Back to Home</button></a>
+            
+            </div>
+          
+        </div>`;
+        } else if (itemId === "5") {
+          detailsContainer.innerHTML = `<div class="product__section--items">
+            <h1>Product details</h1>
+            <img src="./images/g4.png" alt="" />
+          <h1>White Acustic</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+            fuga atque labore ducimus voluptates earum illo minus, libero ullam
+            eum ab asperiores vero cum dicta laborum iste temporibus accusantium
+            necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Omnis, ad necessitatibus enim consequatur dignissimos tempora
+            beatae dolore amet reprehenderit vel velit at rem atque fugiat</p>
+            <div class="details__btn">
+            <button class = "btn">Add to Cart</button>
+            <a href="index.html"><button class = "btn">Back to Home</button></a>
+            
+            </div>  
+          
+        </div>`;
+        } else {
+          detailsContainer.innerHTML = "<p>No details available</p>";
+        }
+      }
+    </script>
+  </body>
+</html>

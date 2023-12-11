@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      h3 {
+        text-align: center;
+        font-size: 3.4rem;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 5px;
+        text-align: left;
+        font-size: 1.6rem;
+      }
+
+      th {
+        background-color: #08192d;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .btn {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #fc0254;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        font-size: 1.3rem;
+      }
+      .btn:hover {
+        background-color: transparent;
+        border: 2px solid #fc0254;
+        color: #fc0254;
+      }
+      #cartTotal,
+      p {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="navigation__Section">
+      <a class="indexhome" href="./index.html">
+        <div class="logo">
+          <img src="./images/logo1.png" alt="Sarangi logo" />
+          <h1><span>SA</span>ARANGI</h1>
+        </div>
+      </a>
+      <div class="middle__nav">
+        <ul>
+          <li><a href="./index.html" class="active-nav">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </section>
+    <h3>Shopping Cart</h3>
+
+    <!-- Cart section -->
+    <div id="cart">
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cartItems">
+          <!-- Cart items will be dynamically added here -->
+        </tbody>
+      </table>
+      <p id="p">Total: $<span id="cartTotal">0.00</span></p>
+
+      <!-- <a href="index.html"><button class="btn">Back to Home</button></a> -->
+    </div>
+
+    <section class="footer__Section">
+      <div class="footer--items">
+        <div class="logo--footer">
+          <div class="logo--img">
+            <img src="./images/logo1.png" alt="" />
+            <h1><span>SA</span>ARANGI</h1>
+          </div>
+          <div class="email__footer">
+            <img src="./images/email-svgrepo-com.svg" alt="" />
+            <a href="#">Enquery@sarangi.com</a>
+          </div>
+          <div class="location__foter">
+            <img src="./images/location-pin-svgrepo-com.svg" alt="" />
+            <p>43 Portico Drive</p>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h1>PAGES</h1>
+          <ul>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer__right--left">
+          <h1>PRODUCT</h1>
+          <ul>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Copyright</a></li>
+          </ul>
+        </div>
+        <div class="footer__follow">
+          <h1>FOLLOW US</h1>
+          <div class="footer__follow--img">
+            <img src="./images/facebook-svgrepo-com.svg" alt="" />
+            <img src="./images/instagram-svgrepo-com.svg" alt="" />
+            <img src="./images/youtube-168-svgrepo-com.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <p>All right reserved &copy; Enquery@sarangi.com</p>
+    </section>
+
+    <script>
+      // Function to update the cart display
+      function updateCart() {
+        const cartItemsElement = document.getElementById("cartItems");
+        const cartTotalElement = document.getElementById("cartTotal");
+
+        // Retrieve cart from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Clear previous cart items
+        cartItemsElement.innerHTML = "";
+
+        // Add each item to the cart table
+        cart.forEach((item, index) => {
+          const row = document.createElement("tr");
+
+          const productNameCell = document.createElement("td");
+          productNameCell.textContent = item.name;
+          row.appendChild(productNameCell);
+
+          const priceCell = document.createElement("td");
+          priceCell.textContent = "$" + item.price.toFixed(2);
+          row.appendChild(priceCell);
+
+          const deleteCell = document.createElement("td");
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          deleteButton.className = "btn";
+          deleteButton.onclick = function () {
+            deleteItem(index);
+          };
+          deleteCell.appendChild(deleteButton);
+          row.appendChild(deleteCell);
+
+          cartItemsElement.appendChild(row);
+        });
+
+        // Calculate and display the total
+        const total = cart.reduce((acc, item) => acc + item.price, 0);
+        cartTotalElement.textContent = total.toFixed(2);
+      }
+
+      // Function to delete a specific item from the cart
+      function deleteItem(index) {
+        // Retrieve cart from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Remove the item at the specified index
+        cart.splice(index, 1);
+
+        // Save the updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update the cart display
+        updateCart();
+      }
+
+      // Call the updateCart function when the page loads
+      updateCart();
+    </script>
+  </body>
+</html>
